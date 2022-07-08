@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICE DOM</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="btn" onclick="on()">
+        click here
+    </div>
+    <div class="main" id="display">
+        <div class="off" onclick="off()">X</div>
+        <div class="dot_ctn">
+            <div class="dot"></div>
+            <div class="rec">REC</div>
+        </div>
+        <div class="text">
+            PRACTICE DOM JS, SLIDE SHOW AUTO
+        </div>
+        <div class="container">
+            <ul class="img-sidebar">
+                <li class="img-item"><img src="./image/1.gif" class="img" onclick="changeImage1(1)" id="1"></li>
+                <li class="img-item"><img src="./image/2.gif" class="img" onclick="changeImage1(2)" id="2"></li>
+                <li class="img-item"><img src="./image/3.gif" class="img" onclick="changeImage1(3)" id="3"></li>
+                <li class="img-item"><img src="./image/4.gif" class="img" onclick="changeImage1(4)" id="4"></li>
+            </ul>
+            <div class="img-display">
+                <img src="./image/1.gif" id="main-image" onclick="changeImage()">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        changeImage1 = function(id) {
+            let imgPath = document.getElementById(id).getAttribute('src')
+            document.getElementById('main-image').setAttribute('src', imgPath)
+        }
+        let index = 1;
+        changeImage = function() {
+            let arr_img = ['./image/1.gif', './image/2.gif', './image/3.gif', './image/4.gif']
+            document.getElementById('main-image').src = arr_img[index]
+            index++
+            if (index == 4) {
+                index = 0
+            }
+        }
+        setInterval(changeImage, 4000)
+
+        off = function() {
+            document.getElementById('display').style.display = "none"
+        }
+
+        on = function() {
+            document.getElementById('display').style.display = "block"
+        }
+    </script>
+</body>
+
+</html>

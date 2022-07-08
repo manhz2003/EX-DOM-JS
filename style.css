@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.main {
+    width: 55%;
+    height: 65vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 140px;
+    border: 3px solid rgb(28, 54, 94);
+    border-top: 20px solid rgb(0, 0, 0);
+    position: relative;
+    display: block;
+}
+
+.off {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: -19px;
+    right: -1px;
+    font-size: 12px;
+    cursor: default;
+    padding: 2px 10px;
+}
+
+.off:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.dot_ctn {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    animation: blinker 1s linear infinite;
+}
+
+.rec {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.text {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(40, 44, 43);
+    cursor: default;
+    text-shadow: 1px 1px 1px rgb(93, 82, 82);
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.img {
+    width: 140px;
+    border-radius: 6px;
+}
+
+#main-image {
+    border-radius: 4px;
+    width: 618px;
+}
+
+.img-display {
+    margin: 0 40px;
+    margin-top: 6px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-item {
+    margin: 6px 0;
+    list-style: none;
+    border-radius: 3px;
+    width: 120px;
+    overflow: hidden;
+}
+
+.img:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: 0.8s ease;
+    filter: brightness(80%);
+}
+
+.btn {
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgb(210, 198, 198);
+    cursor: pointer;
+    background: #000;
+    width: 5.5%;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 0 auto;
+    border: 2px outset lightgray;
+    text-align: center;
+    position: relative;
+    bottom: -850px;
+}
+
+.btn:hover {
+    filter: brightness(80%);
+}
+
+.btn:active {
+    border-style: inset;
+}
